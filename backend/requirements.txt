@@ -1,0 +1,9 @@
+Django>=5.1,<5.2
+djangorestframework>=3.16,<3.17
+django-cors-headers>=4.6,<4.7
+python-dotenv>=1.0,<2.0
+playwright>=1.52,<1.53
+pytest>=8.3,<8.4
+pytest-django>=4.11,<4.12
+pywebview>=5.1,<5.2
+openai>=1.68,<2.0

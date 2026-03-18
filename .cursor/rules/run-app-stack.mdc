@@ -1,0 +1,27 @@
+---
+description: run_app_stack.ps1 및 실행 스크립트 수정 시 필수 계약 준수
+globs: scripts/run_app_stack.ps1, scripts/run_desktop_app.ps1, scripts/*_service.ps1
+alwaysApply: false
+---
+
+# run_app_stack 실행 계약
+
+`run_app_stack.ps1` 수정 시 **반드시** 아래 계약을 준수한다.
+
+## 필수 단계 (생략 금지)
+
+1. stop_app_stack.ps1
+2. run_backend.ps1
+3. run_worker.ps1
+4. run_frontend.ps1
+5. **run_desktop_app.ps1 -NoStartServices** ← 데스크톱 앱 창 실행, 제거 시 앱 창이 뜨지 않음
+
+## 수정 시 체크리스트
+
+- [ ] 5단계 `run_desktop_app.ps1 -NoStartServices` 호출이 유지되는가?
+- [ ] `scripts/RUN_STACK_CONTRACT.md` 계약과 일치하는가?
+
+## 참고
+
+- 계약 문서: `scripts/RUN_STACK_CONTRACT.md`
+- 과거 이슈: LESSON.md "데스크톱 앱 창 미표시"
